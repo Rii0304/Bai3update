@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="prod : ${cart}">
+            <td th:text="${prod.key.id}"></td>
+            <td th:text="${prod.key.name}"></td>
+            <td th:text="${prod.key.price}"></td>
+            <td th:text="${prod.value}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <form th:action="@{/carts/check-out}" th:method="post">
+        <button type="submit">Checkout</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Product</title>
+</head>
+<body>
+<!--<form th:action="@{/products/creates}" method="post" th:object="${product}">-->
+<!--    <span>Name: </span>-->
+<!--    <input type="text" th:field="*{name}">-->
+<!--    <span>Proce: </span>-->
+<!--    <input type="text" th:field="*{price}">-->
+<!--    <button type="submit">Create Product</button>-->
+<!--</form>-->
+
+<form th:action="@{/products/creates}" method="post" enctype="multipart/form-data">
+    <span>Name: </span>
+    <input type="text" name="name">
+    <span>Proce: </span>
+    <input type="text" name="price">
+    <span>Image</span>
+    <input type="file" name="file">
+    <button type="submit">Create Product</button>
+</form>
+</body>
+</html>
